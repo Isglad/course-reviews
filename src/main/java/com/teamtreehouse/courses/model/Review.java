@@ -64,3 +64,18 @@ public class Review {
         return result;
     }
 }
+
+/*
+************ Setting up database ****************
+SQL2o (a lightweight Java database framework) is not an ORM, it allows you to run SQL statements and have them populate your model objects.
+In a standard Java DataBase Connectivity (JDBC) application, a developer writes an SQL statement and gets back a result set object which he then
+uses to create new objects and populate them manually, which is time-consuming!
+* The other end is using an ORM.
+In this scenario, you decorate your model objects, and the ORM will generate the appropriate SQL statement
+and then populate your model object behind the scenes.
+* The downside of this is the amount of configuration is quite large and time-consuming, and often it has
+a fairly steep learning curve to even realize what the ORM is capable of.
+* SQL2o sits right there in the middle, it sits on top of JDBC, and you write SQL. But instead of having
+to loop over the result set, you give it a class blueprint, and it creates filled-out objects based on the
+query results. No configuration needed.
+ */
