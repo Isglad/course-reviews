@@ -11,6 +11,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 
+/*
+This is unit testing
+You can do Manual testing with POSTMAN
+* Set method to POST + url
+* Headers= key: Content-Type and value:application/json
+* Body; select raw and in curly bracket, do this as an example: {"name": "Java Basics", "url": "http://teamtreehouse.com/library/java-basics"}
+* Next, you can perform get for all courses or id
+ */
 public class Sql2oCourseDaoTest {
 
     private Sql2oCourseDao dao;
