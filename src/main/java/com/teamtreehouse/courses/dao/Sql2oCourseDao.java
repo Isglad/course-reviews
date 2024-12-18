@@ -12,6 +12,9 @@ public class Sql2oCourseDao implements CourseDao{
 
     private final Sql2o sql2o;
 
+    /* This approach of passing Sql2o instance upon creation, is constructor dependency injection.
+    JDBC is the abstraction that allows Java to talk to any database
+     */
     public Sql2oCourseDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
@@ -31,6 +34,9 @@ public class Sql2oCourseDao implements CourseDao{
 
     @Override
     public List<Course> findAll() {
-        return null;
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM courses")
+                    .executeAndFetch(Course.class);
+        }
     }
 }
